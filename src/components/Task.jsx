@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { motion } from 'framer-motion'
 import {
 	updateTask,
 	deleteTask,
@@ -37,19 +36,10 @@ const Task = ({ id, title, description, completed }) => {
 	}
 
 	return (
-		<motion.div
+		<div
 			className={`${
 				completed ? 'bg-violet-200/5' : ''
 			} flex items-center justify-between px-4 py-4 rounded-md border shadow-sm transition`}
-			initial={{ opacity: 0 }}
-			transition={{
-				duration: 0.1,
-				ease: 'backOut',
-			}}
-			animate={{
-				opacity: 1,
-			}}
-			exit={{ opacity: 0 }}
 		>
 			<div className="flex gap-4 items-center w-8/12 sm:w-10/12">
 				<input
@@ -123,7 +113,7 @@ const Task = ({ id, title, description, completed }) => {
 					</svg>
 				</button>
 			</div>
-		</motion.div>
+		</div>
 	)
 }
 
